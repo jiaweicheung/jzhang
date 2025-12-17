@@ -1,0 +1,116 @@
+[
+  {
+    "title": "When to hire an influencer?",
+    "authors": [
+      {"name": "Yushan Meng", "url": "https://www.wiwi.uni-konstanz.de/goldluecke/goldluecke/team/team-a-z/"},
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Working paper",
+    "venue": "",
+    "year": 2025,
+    "topics": [
+      "Cheap talk",
+      "Communication",
+      "Influencer"
+    ],
+    "tags": [
+      "influencer",
+      "digital",
+      "communication games"
+    ],
+    "takeaway": "When there is enough people who do not care about influencer.",
+    "links": {
+      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618",
+      "appendix": "",
+      "slides": ""
+    }
+  },
+  {
+    "title": "International Politics of Debris in Earth's Orbit: A Mechanism Design Approach",
+    "authors": [
+      {"name": "C. Philipp Heller", "url": "https://sites.google.com/view/c-philippheller-economist/home"},
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Draft available on request",
+    "venue": "",
+    "year": 2025,
+    "topics": [
+      "Mechanism design",
+      "Space economy"
+    ],
+    "tags": [
+      "space",
+      "mechanism design"
+    ],
+    "takeaway": "",
+    "links": {}
+  },
+  {
+    "title": "AI, safety testing, and strategic communication under regulatory regimes",
+    "authors": [
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Draft coming soon",
+    "venue": "",
+    "year": 2025,
+    "topics": [
+      "Artificial intelligence",
+      "Communication",
+      "AI regulation",
+      "Evidence"
+    ],
+    "tags": [
+      "artificial intelligence",
+      "verification",
+      "regulation",
+      "evidence"
+    ],
+    "takeaway": "",
+    "links": {}
+  },
+  {
+    "title": "Good or bad: How can media affect trial outcomes?",
+    "authors": [
+      {"name": "Mingzhao Dai", "url": "https://mdai-econ.com/"},
+      {"name": "Yushan Meng", "url": "https://www.wiwi.uni-konstanz.de/goldluecke/goldluecke/team/team-a-z/"},
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Draft coming soon",
+    "venue": "",
+    "year": 2025,
+    "topics": [
+      "Trial",
+      "Communication",
+      "Media",
+      "Evidence"
+    ],
+    "tags": [
+      "trial",
+      "verification",
+      "media",
+      "evidence"
+    ],
+    "takeaway": "",
+    "links": {}
+  },
+  {
+    "title": "Optimal Entry Coordination in Auctions with Entry Cost",
+    "authors": [
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Draft available on request",
+    "venue": "",
+    "year": 2023,
+    "topics": [
+      "auction",
+      "costly entry",
+      "correlated equilibrium"
+    ],
+    "tags": [
+      "correlated equilibrium",
+      "auction with cost"
+    ],
+    "takeaway": "",
+    "links": {}
+  }
+]

@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JW Zhang</title>
+  <meta name="description" content="Academic homepage of Jia Wei Zhang." />
+  <link rel="stylesheet" href="/assets/css/style.css" />
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div>
+        <h1><a href="/">Jia Wei Zhang</a></h1>
+        <div class="sub">PhD Candidate • Berlin School of Economics • HU Berlin · Germany</div>
+      </div>
+    </div>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/papers/">Papers</a>
+      <a href="/talks.html">Talks</a>
+      <a href="/teaching.html">Teaching</a>
+      <a href="/service.html">Service</a>
+    </nav>
+  </div>
+</header>
+
+  <div class="wrap">
+    <main>
+      <div class="card">
+        <div class="kicker">Papers</div>
+        <h2 style="margin-top:10px">Working papers</h2>
+        <!-- <p class="small">Edit <code>/assets/js/pubs.json</code> to update this list.</p> -->
+
+        <div class="controls">
+          <input id="q" type="search" placeholder="Search title, author, topic…" aria-label="Search papers" />
+          <select id="status" aria-label="Filter by status"></select>
+          <div class="small" style="align-self:center">Showing <span id="count">0</span></div>
+        </div>
+
+        <div id="pub-list"></div>
+      </div>
+    </main>
+<footer class="footer">
+  <div>© <span id="y"></span> Jia Wei Zhang</div>
+  <div>
+    <a href="/assets/cv.pdf">CV</a> ·
+    <a href="mailto:jiawei.zhang@hu-berlin.de">Email</a> ·
+    <!-- <a href="https://scholar.google.com/">Scholar</a> -->
+    <a href="https://github.com/jiaweicheung">Github</a>
+  </div>
+</footer>
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+
+  </div>
+  <script src="/assets/js/site.js"></script>
+</body>
+</html>

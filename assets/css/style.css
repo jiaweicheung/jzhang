@@ -1,0 +1,163 @@
+:root{
+  --bg:#ffffff;
+  --fg:#0f172a;
+  --muted:#475569;
+  --soft:#64748b;
+  --line:#e2e8f0;
+  --card:#ffffff;
+  --shadow: 0 10px 30px rgba(2,6,23,.06);
+  --radius: 18px;
+  --accent:#0b4f6c;
+  --max: 980px;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0b0c10;
+    --fg:#e5e7eb;
+    --muted:#a3a3a3;
+    --soft:#9ca3af;
+    --line:#22262e;
+    --card:#0f1117;
+    --shadow: 0 18px 40px rgba(0,0,0,.38);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--fg);
+  font: 16px/1.65 var(--sans);
+  text-rendering:optimizeLegibility;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max); margin:0 auto; padding:54px 22px}
+header{
+  position:sticky; top:0; z-index:50;
+  background: color-mix(in oklab, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{max-width:var(--max); margin:0 auto; padding:14px 22px; display:flex; gap:14px; align-items:flex-start; justify-content:space-between}
+.brand h1{margin:0; font-size:22px; line-height:1.25}
+.brand .sub{margin-top:4px; color:var(--muted); font-size:14px}
+nav{display:flex; gap:14px; flex-wrap:wrap; justify-content:flex-end; font-size:14px}
+nav a{color:var(--muted)}
+nav a.active{color:var(--fg)}
+main{padding-top:18px}
+.home{
+  display:grid;
+  grid-template-columns: 340px 1fr;
+  gap:20px;
+  align-items:start;
+}
+@media (max-width: 920px){ .home{grid-template-columns:1fr} }
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow: var(--shadow);
+}
+.kicker{
+  font-size:12px;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--soft);
+}
+h2{font-size:18px; margin:10px 0 10px}
+p{margin:0 0 12px}
+.small{font-size:14px; color:var(--muted)}
+.pills{display:flex; gap:10px; flex-wrap:wrap; margin-top:12px}
+.pill{
+  display:inline-flex; align-items:center;
+  padding:7px 11px;
+  border:1px solid var(--line);
+  border-radius:999px;
+  color:var(--fg);
+  font-size:14px;
+}
+.pill:hover{ text-decoration:none; border-color: color-mix(in oklab, var(--accent) 32%, var(--line)); }
+.avatar{
+  width:84px; height:84px; border-radius:18px;
+  background: var(--line);
+  object-fit:cover;
+  display:block;
+  margin-bottom:12px;
+}
+hr{border:0; border-top:1px solid var(--line); margin:16px 0}
+.pub{
+  padding:14px 0;
+  border-top:1px solid var(--line);
+}
+.pub:first-child{border-top:0; padding-top:0}
+.pub .title{font-weight:650}
+.pub .meta{margin-top:3px; color:var(--muted); font-size:14px}
+.pub .takeaway{margin-top:7px; font-size:14px}
+.pub .links{margin-top:9px; display:flex; gap:10px; flex-wrap:wrap; font-size:14px}
+.badge{
+  display:inline-flex; align-items:center;
+  padding:2px 8px;
+  border-radius:999px;
+  border:1px solid var(--line);
+  color:var(--muted);
+  font-size:12px;
+}
+.footer{
+  margin-top:34px;
+  padding-top:18px;
+  border-top:1px solid var(--line);
+  color:var(--muted);
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+input, select{
+  font:inherit;
+  color:var(--fg);
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:10px 12px;
+}
+.controls{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin: 10px 0 6px;
+}
+code{font-family:var(--mono); font-size:0.95em}
+
+/* About section with portrait */
+.about-card{
+  display:grid;
+  grid-template-columns: 1fr 140px;
+  gap:18px;
+  align-items:start;
+}
+
+.about-photo{
+  width:140px;
+  height:180px;
+  object-fit:cover;
+  border-radius:14px;
+  border:1px solid var(--line);
+  background:var(--line);
+}
+
+/* Stack on mobile */
+@media (max-width: 720px){
+  .about-card{
+    grid-template-columns:1fr;
+  }
+  .about-photo{
+    width:120px;
+    height:150px;
+  }
+}
+
