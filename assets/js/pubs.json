@@ -46,23 +46,24 @@
     "links": {}
   },
   {
-    "title": "AI, safety testing, and strategic communication under regulatory regimes",
+    "title": "How to qualify a supplier? Evidence, disclosure, and gatekeeping in critical industries",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
     "status": "Draft coming soon",
     "venue": "",
-    "year": 2025,
+    "year": 2026,
     "topics": [
-      "Artificial intelligence",
+      "Supplier qualification",
+      "Procurement",
       "Communication",
-      "AI regulation",
+      "Whistleblowing",
       "Evidence"
     ],
     "tags": [
-      "artificial intelligence",
+      "supplier qualification",
       "verification",
-      "regulation",
+      "gatekeeping",
       "evidence"
     ],
     "takeaway": "",
@@ -94,11 +95,11 @@
     "links": {}
   },
   {
-    "title": "Optimal entry coordination in auctions with entry cost",
+    "title": "Entry coordination in auctions with entry cost",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Draft available on request",
+    "status": "Revision requested by Games and Economic Behavior",
     "venue": "",
     "year": 2023,
     "topics": [
@@ -111,6 +112,6 @@
       "auction with cost"
     ],
     "takeaway": "",
-    "links": {}
+    "links": {"pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"}
   }
 ]
