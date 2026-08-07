@@ -9,6 +9,69 @@ function el(tag, attrs={}, children=[]) {
   return n;
 }
 
+function initChineseBrandName(){
+  const variants = [
+    {
+      text:"张家维",
+      lang:"zh-Hans",
+      fontStyles:[
+        {className:"brand-name-zh--sans"},
+        {className:"brand-name-zh--song"},
+        {className:"brand-name-zh--kai"},
+        {className:"brand-name-zh--fangsong"},
+        {className:"brand-name-zh--caoshu", family:"Liu Jian Mao Cao"},
+        {className:"brand-name-zh--xingkai", family:"Ma Shan Zheng"},
+        {className:"brand-name-zh--xingshu", family:"Zhi Mang Xing"},
+        {className:"brand-name-zh--handwritten", family:"Long Cang"}
+      ]
+    },
+    {
+      text:"張家維",
+      lang:"zh-Hant",
+      fontStyles:[
+        {className:"brand-name-zh--noto-sans-tc", family:"Noto Sans TC"},
+        {className:"brand-name-zh--noto-serif-tc", family:"Noto Serif TC"},
+        {className:"brand-name-zh--huninn", family:"Huninn"},
+        {className:"brand-name-zh--goround-tc", family:"Chiron GoRound TC"},
+        {className:"brand-name-zh--bpmf-kai", family:"Bpmf Zihi Kai Std"},
+        {className:"brand-name-zh--marker-gothic", family:"LXGW Marker Gothic"},
+        {className:"brand-name-zh--jason-xingkai"},
+        {className:"brand-name-zh--iansui", family:"Iansui"},
+        {className:"brand-name-zh--wenkai-tc", family:"LXGW WenKai TC"}
+      ]
+    }
+  ];
+  const choose = options => options[Math.floor(Math.random() * options.length)];
+  const brandLinks = Array.from(document.querySelectorAll(".brand h1 a")).filter(brandLink=>
+    brandLink.textContent.trim() === "Jia Wei Zhang" && !brandLink.querySelector(".brand-name-zh")
+  );
+  if (!brandLinks.length) return;
+
+  const variant = choose(variants);
+  const fontStyle = choose(variant.fontStyles);
+  if (fontStyle.family){
+    const fontKey = `${variant.lang}-${fontStyle.className}`;
+    if (!document.querySelector(`link[data-brand-font="${fontKey}"]`)){
+      const stylesheet = new URL("https://fonts.googleapis.com/css2");
+      stylesheet.searchParams.set("family", fontStyle.family);
+      stylesheet.searchParams.set("text", variant.text);
+      stylesheet.searchParams.set("display", "swap");
+      document.head.append(el("link", {
+        rel:"stylesheet",
+        href:stylesheet.toString(),
+        "data-brand-font":fontKey
+      }));
+    }
+  }
+
+  brandLinks.forEach(brandLink=>{
+    brandLink.append(el("span", {
+      class:`brand-name-zh ${fontStyle.className}`,
+      lang:variant.lang
+    }, [variant.text]));
+  });
+}
+
 function renderPub(p){
   const meta = el("div",{class:"meta"},[]);
   if (p.authors && p.authors.length){
@@ -53,7 +116,7 @@ function applyFilters(pubs, q, status){
   return pubs.filter(p=>{
     const hay = [
       p.title,
-      (p.authors||[]).join(" "),
+      (p.authors||[]).map(a=>a.name).join(" "),
       p.venue||"",
       (p.topics||[]).join(" "),
       (p.tags||[]).join(" "),
@@ -83,7 +146,7 @@ async function initPubsPage(){
   function rerender(){
     const filtered = applyFilters(pubs, qInput.value, sSelect.value);
     container.innerHTML = "";
-    for (const p of filtered.sort((a,b)=> (b.year||0)-(a.year||0))){
+    for (const p of filtered){
       container.append(renderPub(p));
     }
     const c = document.getElementById("count");
@@ -95,11 +158,23 @@ async function initPubsPage(){
   rerender();
 }
 
+async function initHomePubs(){
+  const container = document.getElementById("home-pub-list");
+  if (!container) return;
+
+  const pubs = await loadPubs();
+  for (const p of pubs.filter(p=>p.showOnHome)){
+    container.append(renderPub(p));
+  }
+}
+
 document.addEventListener("DOMContentLoaded", ()=>{
+  initChineseBrandName();
   const path = location.pathname.replace(/\/+$/,"");
   document.querySelectorAll("nav a").forEach(a=>{
     const href = a.getAttribute("href").replace(/\/+$/,"");
     if ((href==="/" && (path==="" || path==="/")) || (href!=="/" && path.startsWith(href))) a.classList.add("active");
   });
   initPubsPage();
+  initHomePubs();
 });

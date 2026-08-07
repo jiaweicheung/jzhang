@@ -1,116 +1,141 @@
 [
   {
-    "title": "When to hire an influencer?",
+    "title": "Entry Coordination in Auctions with Entry Cost",
+    "authors": [
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Work in progress",
+    "venue": "Revision requested by Games and Economic Behavior.",
+    "showOnHome": true,
+    "topics": [
+      "Auctions",
+      "Costly entry",
+      "Correlated equilibrium"
+    ],
+    "tags": [
+      "auction",
+      "entry coordination"
+    ],
+    "links": {
+      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"
+    }
+  },
+  {
+    "title": "When to Hire an Influencer?",
     "authors": [
       {"name": "Yushan Meng", "url": "https://www.wiwi.uni-konstanz.de/goldluecke/goldluecke/team/team-a-z/"},
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Working paper",
+    "status": "Work in progress",
     "venue": "",
-    "year": 2025,
+    "showOnHome": true,
     "topics": [
       "Cheap talk",
       "Communication",
-      "Influencer"
+      "Influencers"
     ],
     "tags": [
-      "influencer",
-      "digital",
+      "digital communication",
       "communication games"
     ],
-    "takeaway": "When there are enough people who do not care about the influencer.",
     "links": {
-      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618",
-      "appendix": "",
-      "slides": ""
+      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618"
     }
   },
   {
-    "title": "International politics of debris in Earth's orbit: a mechanism design approach",
+    "title": "The International Politics of Debris in Earth’s Orbit: A Mechanism Design Approach",
     "authors": [
       {"name": "C.-Philipp Heller", "url": "https://sites.google.com/view/c-philippheller-economist/home"},
       {"name": "Jia Wei Zhang"}
     ],
     "status": "Draft available on request",
     "venue": "",
-    "year": 2025,
     "topics": [
       "Mechanism design",
       "Space economy"
     ],
     "tags": [
-      "space",
-      "mechanism design"
+      "space debris",
+      "international politics"
     ],
-    "takeaway": "",
     "links": {}
   },
   {
-    "title": "Disclosure rules with endogenous costly verification: partially informed sender and evidence regimes",
+    "title": "Disclosure Regimes with Covert Verification",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Working paper",
+    "status": "Draft available on request",
     "venue": "",
-    "year": 2026,
     "topics": [
       "Disclosure",
-      "Communication",
-      "Whistleblowing",
+      "Verification",
       "Evidence"
     ],
     "tags": [
-      "disclosure",
-      "verification",
-      "communication",
-      "evidence"
+      "covert verification",
+      "disclosure regimes"
     ],
-    "takeaway": "",
     "links": {}
   },
   {
-    "title": "Persuade before evidence",
+    "title": "Higher Verification Costs Can Support More Disclosure",
+    "authors": [
+      {"name": "Jia Wei Zhang"}
+    ],
+    "status": "Work in progress",
+    "venue": "",
+    "showOnHome": true,
+    "topics": [
+      "Disclosure",
+      "Verification",
+      "Evidence"
+    ],
+    "tags": [
+      "verification costs",
+      "disclosure"
+    ],
+    "links": {
+      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7247399"
+    }
+  },
+  {
+    "title": "Persuade Before Evidence",
     "authors": [
       {"name": "Mingzhao Dai", "url": "https://mdai-econ.com/"},
       {"name": "Yushan Meng", "url": "https://www.wiwi.uni-konstanz.de/goldluecke/goldluecke/team/team-a-z/"},
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Draft coming soon",
+    "status": "Draft available on request",
     "venue": "",
-    "year": 2025,
     "topics": [
-      "Trial",
+      "Persuasion",
       "Communication",
-      "Media",
       "Evidence"
     ],
     "tags": [
-      "trial",
-      "verification",
-      "media",
+      "persuasion",
       "evidence"
     ],
-    "takeaway": "",
     "links": {}
   },
   {
-    "title": "Entry coordination in auctions with entry cost",
+    "title": "Rewarding Bad News: Optimal Evidence Rules with Covert Verification",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Working paper",
-    "venue": "Revision requested by Games and Economic Behavior",
-    "year": 2023,
+    "status": "Work in progress",
+    "venue": "",
     "topics": [
-      "auction",
-      "costly entry",
-      "correlated equilibrium"
+      "Evidence",
+      "Verification",
+      "Disclosure"
     ],
     "tags": [
-      "correlated equilibrium",
-      "auction with cost"
+      "bad news",
+      "evidence rules",
+      "covert verification"
     ],
-    "takeaway": "The auctioneer betters off at the cost of bidders, with just communication",
-    "links": {"pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"}
+    "links": {}
   }
 ]
