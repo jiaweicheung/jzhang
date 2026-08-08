@@ -182,7 +182,9 @@ function renderPub(p){
   const links = [];
   const map = {pdf:"PDF", appendix:"Appendix", slides:"Slides", code:"Code", data:"Data"};
   for (const k of Object.keys(map)){
-    if (p.links && p.links[k]) links.push(el("a",{href:p.links[k]},[map[k]]));
+    if (p.links && p.links[k]){
+      links.push(el("a",{href:p.links[k], target:"_blank", rel:"noopener"},[map[k]]));
+    }
   }
 
   return el("div",{class:"pub"},[
