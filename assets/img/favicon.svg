@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <title>Jia Wei Zhang</title>
+  <rect x="1" y="1" width="30" height="30" rx="4" fill="#0b4f6c" />
+  <path
+    fill="#f8fafc"
+    d="M5 5h11v4H9v4h7v11c0 2.2-1.8 4-4 4H5v-4h6c.6 0 1-.4 1-1v-5H5v-4h7V9H5z"
+  />
+  <path
+    fill="#f2c14e"
+    d="M20 5h8v3h-5v2h5v3h-5v2h5v3h-5v4l5-2v4l-8 4V18h-2v-3h2z"
+  />
+</svg>
