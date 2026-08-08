@@ -72,6 +72,93 @@ function initChineseBrandName(){
   });
 }
 
+function initNamePronunciations(){
+  const pronunciations = Array.from(document.querySelectorAll("[data-pronunciation]"));
+  if (!pronunciations.length) return;
+
+  const players = pronunciations.map(pronunciation=>({
+    button:pronunciation.querySelector("[data-pronunciation-play]"),
+    audio:pronunciation.querySelector("[data-pronunciation-audio]"),
+    action:pronunciation.querySelector("[data-pronunciation-action]"),
+    status:pronunciation.querySelector("[data-pronunciation-status]")
+  })).filter(player=>player.button && player.audio);
+  let requestedPlayer = null;
+  let playRequest = 0;
+
+  const setPlaying = (player, isPlaying)=>{
+    player.button.classList.toggle("is-playing", isPlaying);
+    if (player.action) player.action.textContent = isPlaying ? "Playing…" : "Play";
+  };
+
+  const announce = (player, message)=>{
+    if (player.status) player.status.textContent = message;
+  };
+
+  const stopOthers = activePlayer=>{
+    players.forEach(player=>{
+      if (player === activePlayer) return;
+      player.audio.pause();
+      player.audio.currentTime = 0;
+      setPlaying(player, false);
+    });
+  };
+
+  players.forEach(player=>{
+    player.button.addEventListener("click", async ()=>{
+      const requestId = ++playRequest;
+      requestedPlayer = player;
+      stopOthers(player);
+      player.audio.pause();
+      player.audio.currentTime = 0;
+      try {
+        await player.audio.play();
+      } catch (error) {
+        if (requestId !== playRequest || error?.name === "AbortError") return;
+        requestedPlayer = null;
+        setPlaying(player, false);
+        announce(player, "The pronunciation audio could not be played.");
+      }
+    });
+
+    player.audio.addEventListener("play", ()=>{
+      if (requestedPlayer !== player){
+        player.audio.pause();
+        player.audio.currentTime = 0;
+        setPlaying(player, false);
+        return;
+      }
+      stopOthers(player);
+      setPlaying(player, true);
+      const label = player.button.getAttribute("aria-label") || "Play pronunciation";
+      announce(player, label.replace(/^Play\b/, "Playing") + ".");
+    });
+
+    player.audio.addEventListener("pause", ()=>setPlaying(player, false));
+    player.audio.addEventListener("ended", ()=>{
+      if (requestedPlayer === player) requestedPlayer = null;
+      setPlaying(player, false);
+      announce(player, "Pronunciation finished.");
+    });
+    player.audio.addEventListener("error", ()=>{
+      if (requestedPlayer === player){
+        requestedPlayer = null;
+        playRequest += 1;
+      }
+      setPlaying(player, false);
+      player.button.disabled = true;
+      player.button.setAttribute("aria-label", "Pronunciation audio unavailable");
+      if (player.action) player.action.textContent = "Unavailable";
+      announce(player, "The pronunciation audio is unavailable.");
+    });
+  });
+
+  window.addEventListener("pagehide", ()=>{
+    requestedPlayer = null;
+    playRequest += 1;
+    players.forEach(player=>player.audio.pause());
+  });
+}
+
 function renderPub(p){
   const meta = el("div",{class:"meta"},[]);
   if (p.authors && p.authors.length){
@@ -170,6 +257,7 @@ async function initHomePubs(){
 
 document.addEventListener("DOMContentLoaded", ()=>{
   initChineseBrandName();
+  initNamePronunciations();
   const path = location.pathname.replace(/\/+$/,"");
   document.querySelectorAll("nav a").forEach(a=>{
     const href = a.getAttribute("href").replace(/\/+$/,"");
