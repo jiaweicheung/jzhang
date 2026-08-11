@@ -1,6 +1,6 @@
 [
   {
-    "title": "Entry Coordination in Auctions with Entry Cost",
+    "title": "Entry Coordination in Auctions with Entry Costs",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
@@ -16,6 +16,7 @@
       "auction",
       "entry coordination"
     ],
+    "takeaway": "Private entry recommendations let the seller capture all surplus net of entry costs by randomizing between the efficient entrant count and one more.",
     "links": {
       "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"
     }
@@ -38,6 +39,7 @@
       "digital communication",
       "communication games"
     ],
+    "takeaway": "A paid influencer is profitable only when effort costs are low and the share of inexperienced consumers is positive but not too large.",
     "links": {
       "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618"
     }
@@ -58,10 +60,11 @@
       "space debris",
       "international politics"
     ],
+    "takeaway": "Without credible enforcement, free-riding reduces debris agreements to the anarchic outcome; conditioning orbital access on participation can support more efficient cooperation.",
     "links": {}
   },
   {
-    "title": "Disclosure Regimes with Covert Verification",
+    "title": "Default Rules and Whistleblowing with Covert Evidence Acquisition",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
@@ -76,7 +79,10 @@
       "covert verification",
       "disclosure regimes"
     ],
-    "links": {}
+    "takeaway": "Under covert verification, deny-by-default improves receiver welfare only by inducing more testing, while whistleblowing matters only with voluntary certification.",
+    "links": {
+      "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7266879"
+    }
   },
   {
     "title": "Higher Verification Costs Can Support More Disclosure",
@@ -95,6 +101,7 @@
       "verification costs",
       "disclosure"
     ],
+    "takeaway": "Higher verification costs can increase favorable disclosure because harsher inferences from silence induce the sender to verify more often.",
     "links": {
       "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7247399"
     }
@@ -117,6 +124,7 @@
       "persuasion",
       "evidence"
     ],
+    "takeaway": "Early public persuasion can crowd out hard-evidence acquisition and leave the receiver less informed, so restricting pre-trial publicity may improve welfare.",
     "links": {}
   },
   {

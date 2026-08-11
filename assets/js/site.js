@@ -190,7 +190,6 @@ function renderPub(p, headingTag="h3"){
   return el("article",{class:"pub"},[
     el(headingTag,{class:"title"},[p.title]),
     meta,
-    ...((p.topics||[]).length ? [el("div",{class:"topics"},[`Topics: ${p.topics.join(", ")}`])] : []),
     ...(p.takeaway ? [el("div",{class:"takeaway"},[p.takeaway])] : []),
     ...(links.length ? [el("div",{class:"links"},links)] : [])
   ]);
@@ -209,6 +208,7 @@ function applyFilters(pubs, q, status){
       p.title,
       (p.authors||[]).map(a=>a.name).join(" "),
       p.venue||"",
+      p.takeaway||"",
       (p.topics||[]).join(" "),
       (p.tags||[]).join(" "),
       p.status||""

@@ -234,7 +234,6 @@ hr{border:0; border-top:1px solid var(--line); margin:16px 0}
 .pub:first-child{border-top:0; padding-top:0}
 .pub .title{font-size:16px; font-weight:650; line-height:1.45; margin:0}
 .pub .meta{margin-top:3px; color:var(--muted); font-size:14px}
-.pub .topics{margin-top:5px; color:var(--muted); font-size:13px}
 .pub .takeaway{margin-top:7px; font-size:14px}
 .pub .links{margin-top:9px; display:flex; gap:10px; flex-wrap:wrap; font-size:14px}
 .badge{
