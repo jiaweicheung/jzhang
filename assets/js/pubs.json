@@ -17,7 +17,7 @@
       "entry coordination"
     ],
     "links": {
-      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"
+      "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5947634"
     }
   },
   {
@@ -39,7 +39,7 @@
       "communication games"
     ],
     "links": {
-      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618"
+      "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618"
     }
   },
   {
@@ -96,7 +96,7 @@
       "disclosure"
     ],
     "links": {
-      "pdf": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7247399"
+      "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7247399"
     }
   },
   {
@@ -124,7 +124,7 @@
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
-    "status": "Preliminary project",
+    "status": "Draft in preparation",
     "venue": "",
     "topics": [
       "Evidence",

@@ -42,7 +42,7 @@ function initChineseBrandName(){
     }
   ];
   const choose = options => options[Math.floor(Math.random() * options.length)];
-  const brandLinks = Array.from(document.querySelectorAll(".brand h1 a")).filter(brandLink=>
+  const brandLinks = Array.from(document.querySelectorAll(".brand .site-title a")).filter(brandLink=>
     brandLink.textContent.trim() === "Jia Wei Zhang" && !brandLink.querySelector(".brand-name-zh")
   );
   if (!brandLinks.length) return;
@@ -159,7 +159,7 @@ function initNamePronunciations(){
   });
 }
 
-function renderPub(p){
+function renderPub(p, headingTag="h3"){
   const meta = el("div",{class:"meta"},[]);
   if (p.authors && p.authors.length){
   p.authors.forEach((a, i) => {
@@ -180,23 +180,25 @@ function renderPub(p){
   if (p.year){ meta.append(document.createTextNode(" · " + String(p.year))); }
 
   const links = [];
-  const map = {pdf:"PDF", appendix:"Appendix", slides:"Slides", code:"Code", data:"Data"};
+  const map = {ssrn:"SSRN", pdf:"PDF", appendix:"Appendix", slides:"Slides", code:"Code", data:"Data"};
   for (const k of Object.keys(map)){
     if (p.links && p.links[k]){
       links.push(el("a",{href:p.links[k], target:"_blank", rel:"noopener"},[map[k]]));
     }
   }
 
-  return el("div",{class:"pub"},[
-    el("div",{class:"title"},[p.title]),
+  return el("article",{class:"pub"},[
+    el(headingTag,{class:"title"},[p.title]),
     meta,
+    ...((p.topics||[]).length ? [el("div",{class:"topics"},[`Topics: ${p.topics.join(", ")}`])] : []),
     ...(p.takeaway ? [el("div",{class:"takeaway"},[p.takeaway])] : []),
     ...(links.length ? [el("div",{class:"links"},links)] : [])
   ]);
 }
 
 async function loadPubs(){
-  const res = await fetch("/assets/js/pubs.json", {cache:"no-store"});
+  const res = await fetch("/assets/js/pubs.json");
+  if (!res.ok) throw new Error(`Could not load publications (${res.status})`);
   return await res.json();
 }
 
@@ -221,7 +223,12 @@ async function initPubsPage(){
   const container = document.getElementById("pub-list");
   if (!container) return;
 
-  const pubs = await loadPubs();
+  let pubs;
+  try {
+    pubs = await loadPubs();
+  } catch (error) {
+    return;
+  }
   const statuses = ["All", ...Array.from(new Set(pubs.map(p=>p.status).filter(Boolean)))];
 
   const qInput = document.getElementById("q");
@@ -236,7 +243,7 @@ async function initPubsPage(){
     const filtered = applyFilters(pubs, qInput.value, sSelect.value);
     container.innerHTML = "";
     for (const p of filtered){
-      container.append(renderPub(p));
+      container.append(renderPub(p, "h2"));
     }
     const c = document.getElementById("count");
     if (c) c.textContent = String(filtered.length);
@@ -251,19 +258,30 @@ async function initHomePubs(){
   const container = document.getElementById("home-pub-list");
   if (!container) return;
 
-  const pubs = await loadPubs();
+  let pubs;
+  try {
+    pubs = await loadPubs();
+  } catch (error) {
+    return;
+  }
+  container.replaceChildren();
   for (const p of pubs.filter(p=>p.showOnHome)){
-    container.append(renderPub(p));
+    container.append(renderPub(p, "h3"));
   }
 }
 
 document.addEventListener("DOMContentLoaded", ()=>{
   initChineseBrandName();
   initNamePronunciations();
-  const path = location.pathname.replace(/\/+$/,"");
+  const normalizePath = value=>value.replace(/\/+$/,"") || "/";
+  const path = normalizePath(location.pathname);
   document.querySelectorAll("nav a").forEach(a=>{
-    const href = a.getAttribute("href").replace(/\/+$/,"");
-    if ((href==="/" && (path==="" || path==="/")) || (href!=="/" && path.startsWith(href))) a.classList.add("active");
+    const href = normalizePath(a.getAttribute("href"));
+    const isActive = href==="/" ? path==="/" : path===href || path.startsWith(`${href}/`);
+    if (isActive){
+      a.classList.add("active");
+      a.setAttribute("aria-current", "page");
+    }
   });
   initPubsPage();
   initHomePubs();
