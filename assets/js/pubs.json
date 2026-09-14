@@ -64,12 +64,13 @@
     "links": {}
   },
   {
-    "title": "Default Rules and Independent Reporting in Covert Acquisition",
+    "title": "Evidence Rules and the Value of Silence",
     "authors": [
       {"name": "Jia Wei Zhang"}
     ],
     "status": "Working paper",
     "venue": "",
+    "showOnHome": true,
     "topics": [
       "Disclosure",
       "Verification",
@@ -79,7 +80,7 @@
       "covert verification",
       "disclosure regimes"
     ],
-    "takeaway": "Under covert verification, deny-by-default improves receiver welfare only by inducing more testing, while whistleblowing matters only with voluntary certification.",
+    "takeaway": "Strict evidence requirements can induce more investigation yet worsen decisions because the extra evidence fails to compensate for ignoring informative silence.",
     "links": {
       "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=7266879"
     }
@@ -91,7 +92,6 @@
     ],
     "status": "Working paper",
     "venue": "",
-    "showOnHome": true,
     "topics": [
       "Disclosure",
       "Verification",
