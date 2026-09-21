@@ -22,7 +22,7 @@
     }
   },
   {
-    "title": "When to Hire an Influencer?",
+    "title": "Performance Contracts for Noncontractible Recommendations",
     "authors": [
       {"name": "Yushan Meng", "url": "https://yushanmeng.github.io/"},
       {"name": "Jia Wei Zhang"}
@@ -31,15 +31,19 @@
     "venue": "",
     "showOnHome": true,
     "topics": [
-      "Cheap talk",
-      "Communication",
-      "Influencers"
+      "Performance contracts",
+      "Limited commitment",
+      "Strategic communication",
+      "Recommendations",
+      "Uniform pricing"
     ],
     "tags": [
-      "digital communication",
-      "communication games"
+      "influencers",
+      "private advice costs",
+      "screening",
+      "noncontractible recommendations"
     ],
-    "takeaway": "A paid influencer is profitable only when effort costs are low and the share of inexperienced consumers is positive but not too large.",
+    "takeaway": "With private advice costs, at most two performance contracts attain the seller’s best delegated payoff under favorable equilibrium selection; direct commitment weakly improves that payoff.",
     "links": {
       "ssrn": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5289618"
     }
