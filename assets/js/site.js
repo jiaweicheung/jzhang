@@ -176,7 +176,14 @@ function renderPub(p, headingTag="h3"){
     meta.append(document.createTextNode(" · "));
     meta.append(el("span",{class:"badge"},[p.status]));
   }
-  if (p.venue){ meta.append(document.createTextNode(" · " + p.venue)); }
+  if (p.venue || p.journal){
+    meta.append(document.createTextNode(" · " + (p.venue || "")));
+    if (p.journal){
+      if (p.venue) meta.append(document.createTextNode(" "));
+      meta.append(el("em", {}, [p.journal]));
+      meta.append(document.createTextNode("."));
+    }
+  }
   if (p.year){ meta.append(document.createTextNode(" · " + String(p.year))); }
 
   const links = [];
@@ -208,6 +215,7 @@ function applyFilters(pubs, q, status){
       p.title,
       (p.authors||[]).map(a=>a.name).join(" "),
       p.venue||"",
+      p.journal||"",
       p.takeaway||"",
       (p.topics||[]).join(" "),
       (p.tags||[]).join(" "),
