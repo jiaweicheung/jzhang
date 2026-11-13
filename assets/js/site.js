@@ -185,9 +185,10 @@ function renderPub(p, headingTag="h3"){
     }
   }
   if (p.year){ meta.append(document.createTextNode(" · " + String(p.year))); }
+  if (p.note){ meta.append(document.createTextNode(" · " + p.note)); }
 
   const links = [];
-  const map = {ssrn:"SSRN", pdf:"PDF", appendix:"Appendix", slides:"Slides", code:"Code", data:"Data"};
+  const map = {ssrn:"SSRN", latest:"Latest version", pdf:"PDF", appendix:"Appendix", slides:"Slides", code:"Code", data:"Data"};
   for (const k of Object.keys(map)){
     if (p.links && p.links[k]){
       links.push(el("a",{href:p.links[k], target:"_blank", rel:"noopener"},[map[k]]));
@@ -216,6 +217,7 @@ function applyFilters(pubs, q, status){
       (p.authors||[]).map(a=>a.name).join(" "),
       p.venue||"",
       p.journal||"",
+      p.note||"",
       p.takeaway||"",
       (p.topics||[]).join(" "),
       (p.tags||[]).join(" "),
